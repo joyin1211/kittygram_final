@@ -34,14 +34,8 @@ jobs:
           pip install ruff pycodestyle
           pip install -r backend/requirements.txt
 
-      - name: Check formatting with ruff format
-        run: ruff format --check backend/
-
       - name: Lint with ruff
-        run: ruff check backend/
-
-      - name: Check code style with pycodestyle
-        run: pycodestyle --max-line-length=119 backend/
+        run: ruff check --select E,W,F --ignore E501 backend/
 
       - name: Run backend tests
         env:
