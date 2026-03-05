@@ -2,6 +2,7 @@ name: Kittygram CI/CD
 
 on:
   push:
+  workflow_dispatch:
 
 jobs:
   tests:
